@@ -1,0 +1,40 @@
+//these three structs are not solutions but generals concepts/ideas
+//can put in Graph.h
+//forward declare all these structs declaring AdjacentEdge, then Vertex, then Edge
+	//at top of code: struct AdjacentEdge; 
+struct Vertex //array of vertices
+{
+	int id; 
+	int num_outgoing_edges; 
+	AdjacentEdge* adj_list; //linked list to indicate neighbors
+}* vertices; 
+
+struct AdjacentEdge //adjacency list (linked list)
+{
+	Vertex* neighbor; 
+	int weight;
+	bool not_used; //initialized to true
+	AdjacentEdge* next; 
+};
+
+struct Edge //for stack --> contains source node and adjacency list
+{
+	Vertex* vertex; //source node
+	AdjacentEdge* edge; //adjacency list
+	Edge* next; //bc linked list use this node; can make a different data structure and not use this (like an array)
+}
+
+FIND A EULER CIRCUIT PSEUDOCODE (3)
+insert Edge (1,2) into tempStack
+print status of both stack
+while tempStack is not empty
+	Edge <- tempStack.pop()
+	if Edge is White
+		set Edge (and reversed) to "visited"
+	determine whether destination node of Edge has an unvisted neighbor //use not_used variable
+	if Edge is Gray
+		both the Edge and new Edge between destination node and its neightbor are inserted into tempStack
+	else
+		create reversed Edge and push it into circuit
+	print status of circuit
+	print status of tempStack
