@@ -1,0 +1,15 @@
+adding edges:
+	add to head (empty linked list)
+	add to head (vertex to add is smaller than vertex that is in the list)
+	add to head (vertex is the same, but weight to add is smaller than weight that is in the list)
+	add as second element (vertex to add is larger than the vertex that is in the list)
+	add as second element (vertex is same as current second element but weight is larger)
+	add in middle (vertex to add is in between two vertexes already in the list)
+	add in middle (vertex is the same but the weight is in between) 
+
+GRAPH
+adding edge:
+	add edge in array - call adding edge from linked list class
+printing 
+	print out which node going from then call the length function from linked list to get degree
+	call printList from linked list
